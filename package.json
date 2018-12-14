@@ -1,0 +1,20 @@
+{
+  "name": "elemental-css",
+  "description": "A very basic CSS setup using SASS.",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marc Wiest",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "postcss": "^7.0.6"
+  }
+}

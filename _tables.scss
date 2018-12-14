@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+table {
+    border-spacing: 0;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: $default_spacing;
+}
+
+caption {
+    margin: ($default_spacing / 2) 0;
+    font-size: 80%;
+    text-align: left;
+    font-style: italic;
+    caption-side: bottom;
+}
+
+tr {
+    border-bottom: 1px solid $color_ui;
+}
+
+th, td {
+    padding: $default_spacing / 2;
+    &:first-child { padding-left: 0; }
+    &:last-child { padding-right: 0; }
+    vertical-align: middle;
+    text-align: left;
+    line-height: inherit;
+}

@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+figure,
+audio,
+video {
+	margin-bottom: $default_spacing;
+}
+
+img,
+embed,
+iframe,
+object {
+    // Making media responsive.
+	max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+figcaption { font-size: 80%; }
+
+img {
+    display: inline-block;
+	height: auto;
+    // Styling alt text.
+    font-size: 80%;
+    font-style: italic;
+}
+
+svg {
+    // Helps with SVGs sizing.
+	max-height: 100%;
+}

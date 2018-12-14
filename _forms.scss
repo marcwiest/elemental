@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+form,
+fieldset {
+    margin-bottom: $default_spacing;
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+legend, label, input, textarea {
+    display: inline-block;
+}
+
+[type*="date"],
+[type*="datetime-local"], // github.com/whatwg/html/issues/336
+[type*="month"],
+[type*="time"],
+[type*="week"],
+[type*="file"],
+[type*="email"],
+[type*="number"],
+[type*="password"],
+[type*="search"],
+[type*="tel"],
+[type*="text"],
+[type*="url"],
+input:not([type]),
+textarea,
+select {
+    width: 100%;
+    font-family: $font_family_input;
+    font-size: $font_size_input;
+    line-height: $line_height_ratio_input;
+    padding:
+        $padding_top_input
+        $padding_right_input
+        $padding_bottom_input
+        $padding_left_input;
+    border-width: $border_width_input;
+    border-radius: $border_radius_input;
+    border-style: solid;
+    box-shadow: none;
+    color: $color_input;
+    background-color: $background_color_input;
+    border-color: $border_color_input;
+    &:hover {
+        color: $color_input_hover;
+        background-color: $background_color_input_hover;
+        border-color: $border_color_input_hover;
+    }
+    &:focus {
+        color: $color_input_focus;
+        background-color: $background_color_input_focus;
+        border-color: $border_color_input_focus;
+    }
+}
+
+// Ignore rtl for non rtl data.
+[type*="email"],
+[type*="url"] {
+	direction: ltr;
+}
+
+input,
+textarea {
+    &::placeholder { color: $placeholder_color_input; }
+    &:hover::placeholder { color: $placeholder_color_input_hover; }
+    &:focus::placeholder { color: $placeholder_color_input_focus; }
+}
+
+textarea {
+    // Remove space below the textarea.
+    vertical-align: top;
+    // Only allow vertical resizing.
+    resize: vertical;
+    overflow: auto;
+}
+
+select {
+    display: inline-block;
+    // A height is required, because padding will not size this input appropriately.
+    height: $height_select;
+    @supports (-moz-appearance:none) {
+        // Targeting Firefox only, because it renders height differently.
+        height: $height_select_firefox;
+    }
+    cursor: pointer;
+
+    // NOTE: Old appearence setup.
+    // appearance: menulist;
+    // Override webkit to ensure proper display when multiple or size attribute is present.
+    // -webkit-appearance: menulist-button;
+
+    // NOTE: New appearance setup.
+    -webkit-appearance: none;
+       -moz-appearance: none;
+    // Base64 encoded via http://b64.io/
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8ZyBpZD0iRGVza3RvcCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iQ29udGFjdC1VcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgxNC4wMDAwMDAsIC0yMDE1LjAwMDAwMCkiIGZpbGw9IiM4MjgzODQiPiAgICAgICAgICAgIDxnIGlkPSJDb250YWN0LUZvcm0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxMzY3LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYyLjAwMDAwMCwgMTI0LjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZvcm0tQ29udGVudCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDYuMDAwMDAwLCAyNTYuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlJlY3RhbmdsZS0xMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDExLjAwMDAwMCwgMjY4LjAwMDAwMCkgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtNDExLjAwMDAwMCwgLTI2OC4wMDAwMDApICIgcG9pbnRzPSI0MDggMjY1IDQxNCAyNzEgNDA4IDI3MSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
+    background-position: calc( 100% - #{$padding_right_input} ) 50%;
+}
+
+button,
+[type*="button"],
+[type*="submit"],
+[type*="reset"] {
+    display: inline-block;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+[type*="checkbox"],
+[type*="radio"] {
+    cursor: pointer;
+}

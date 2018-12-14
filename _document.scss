@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+html {
+    min-width: 320px;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+    color: $color_text;
+    font-family: $font_family_text;
+    font-size: $font_size_text;
+    line-height: $line_height_ratio_text;
+}
+
+body,
+button,
+[type="button"],
+[type="submit"],
+[type="reset"] {
+    @if $apply_font_smoothing {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
