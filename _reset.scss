@@ -1,31 +1,29 @@
 @charset "UTF-8";
 
+// Reset.
+
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-width: 0;
     border-style: solid;
     border-color: $color_ui;
+    border-width: 0;
     background-repeat: no-repeat;
 }
 
 ::selection {
-    background: rgba(255, 244, 147, .8);
+    background: rgba( 255, 244, 147, .8 );
     color: inherit;
     text-shadow: none;
 }
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
+// Normalize overrides.
 
 img {
-    // Normalize override.
     border-style: solid;
+}
+
+fieldset {
+    padding: 0;
 }

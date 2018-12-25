@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
 figure,
 audio,
 video {

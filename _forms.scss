@@ -41,7 +41,6 @@ select {
         $padding_left_input;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
-    border-style: solid;
     box-shadow: none;
     color: $color_input;
     background-color: $background_color_input;
@@ -56,6 +55,7 @@ select {
         background-color: $background_color_input_focus;
         border-color: $border_color_input_focus;
     }
+    @include focus-outline;
 }
 
 // Ignore rtl for non rtl data.
@@ -66,7 +66,13 @@ select {
 
 input,
 textarea {
-    &::placeholder { color: $placeholder_color_input; }
+    &::placeholder {
+        color: $placeholder_color_input;
+        // Correct firefox placeholder color.
+        @supports (-moz-appearance:none) {
+            opacity: 1;
+        }
+    }
     &:hover::placeholder { color: $placeholder_color_input_hover; }
     &:focus::placeholder { color: $placeholder_color_input_focus; }
 }
@@ -79,13 +85,22 @@ textarea {
     overflow: auto;
 }
 
+
+    // Remove inner border for Firefox.
+    // ::-moz-focus-inner { border: 0 !important; }
+
 select {
     display: inline-block;
     // A height is required, because padding will not size this input appropriately.
     height: $height_select;
+    // Set correct/matching height for Firefox.
     @supports (-moz-appearance:none) {
-        // Targeting Firefox only, because it renders height differently.
         height: $height_select_firefox;
+    }
+    // Remove inner border for Firefox.
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
     }
     cursor: pointer;
 
@@ -108,8 +123,16 @@ button,
 [type*="reset"] {
     display: inline-block;
     appearance: none;
-    background-color: transparent;
+    padding:
+        $padding_top_input
+        $padding_right_input
+        $padding_bottom_input
+        $padding_left_input;
+    background-color: $color_ui;
+    border-width: $border_width_input;
+    border-radius: $border_radius_input;
     cursor: pointer;
+    @include focus-outline;
 }
 
 [type*="checkbox"],
