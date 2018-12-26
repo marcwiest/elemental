@@ -10,7 +10,7 @@ fieldset {
     }
 }
 
-legend, label, input, textarea {
+label, input, select, textarea {
     display: inline-block;
 }
 
@@ -33,12 +33,16 @@ select {
     width: 100%;
     font-family: $font_family_input;
     font-size: $font_size_input;
-    line-height: $line_height_ratio_input;
-    padding:
-        $padding_top_input
-        $padding_right_input
-        $padding_bottom_input
-        $padding_left_input;
+    height: $height_input;
+    line-height: $height_input;
+    @supports (-moz-appearance:none) {
+        height: $height_input_moz;
+        line-height: $height_input_moz;
+    }
+    padding: {
+        left: $padding_left_input;
+        right: $padding_right_input;
+    }
     border-width: $border_width_input;
     border-radius: $border_radius_input;
     box-shadow: none;
@@ -83,38 +87,35 @@ textarea {
     // Only allow vertical resizing.
     resize: vertical;
     overflow: auto;
+    height: auto;
+    line-height: $line_height_ratio_input;
+    @supports (-moz-appearance:none) {
+        min-height: $height_input_moz;
+    }
+    padding: {
+        top: $padding_top_input;
+        bottom: $padding_bottom_input;
+    }
 }
 
-
-    // Remove inner border for Firefox.
-    // ::-moz-focus-inner { border: 0 !important; }
-
 select {
-    display: inline-block;
-    // A height is required, because padding will not size this input appropriately.
-    height: $height_select;
-    // Set correct/matching height for Firefox.
-    @supports (-moz-appearance:none) {
-        height: $height_select_firefox;
-    }
+    cursor: pointer;
+    appearance: none;
+
     // Remove inner border for Firefox.
     &:-moz-focusring {
         color: transparent;
         text-shadow: 0 0 0 #000;
     }
-    cursor: pointer;
 
-    // NOTE: Old appearence setup.
-    // appearance: menulist;
-    // Override webkit to ensure proper display when multiple or size attribute is present.
-    // -webkit-appearance: menulist-button;
-
-    // NOTE: New appearance setup.
-    -webkit-appearance: none;
-       -moz-appearance: none;
-    // Base64 encoded via http://b64.io/
+    // Base64 encoded via: http://b64.io/
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8ZyBpZD0iRGVza3RvcCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iQ29udGFjdC1VcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgxNC4wMDAwMDAsIC0yMDE1LjAwMDAwMCkiIGZpbGw9IiM4MjgzODQiPiAgICAgICAgICAgIDxnIGlkPSJDb250YWN0LUZvcm0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxMzY3LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYyLjAwMDAwMCwgMTI0LjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZvcm0tQ29udGVudCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDYuMDAwMDAwLCAyNTYuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlJlY3RhbmdsZS0xMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDExLjAwMDAwMCwgMjY4LjAwMDAwMCkgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtNDExLjAwMDAwMCwgLTI2OC4wMDAwMDApICIgcG9pbnRzPSI0MDggMjY1IDQxNCAyNzEgNDA4IDI3MSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
     background-position: calc( 100% - #{$padding_right_input} ) 50%;
+}
+
+[type*="file"] {
+    overflow: hidden;
+    &::-webkit-file-upload-button {}
 }
 
 button,
@@ -123,19 +124,26 @@ button,
 [type*="reset"] {
     display: inline-block;
     appearance: none;
-    padding:
-        $padding_top_input
-        $padding_right_input
-        $padding_bottom_input
-        $padding_left_input;
+    cursor: pointer;
+    text-align: center;
+    height: $height_input;
+    line-height: $height_input;
+    @supports (-moz-appearance:none) {
+        height: $height_input_moz;
+        line-height: $height_input_moz;
+    }
+    padding: {
+        left: $padding_left_input;
+        right: $padding_right_input;
+    }
     background-color: $color_ui;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
-    cursor: pointer;
     @include focus-outline;
 }
 
 [type*="checkbox"],
 [type*="radio"] {
+    vertical-align: middle;
     cursor: pointer;
 }

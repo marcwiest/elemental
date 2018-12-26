@@ -5,8 +5,7 @@ p {
 }
 
 ol, ul {
-    list-style-position: outside;
-    padding-left: 2ch;
+    list-style-position: inside;
     margin-bottom: $default_spacing;
     cursor: default;
     & ol,
@@ -25,13 +24,11 @@ dt {
     font-weight: bold;
     color: $color_heading;
 }
-dd {
-    margin-bottom: $default_spacing;
-}
+dd {}
 
 abbr, dfn {
     text-decoration: none;
-    border-bottom: dashed 2px currentColor;
+    border-bottom: dashed 1px currentColor;
     &[title] {
         cursor: help;
     }
@@ -40,6 +37,7 @@ abbr, dfn {
 a {
     color: $color_accent;
     text-decoration: none;
+    // NOTE: States need to be applied in the following order:
     // &:hover, &:focus, &:visited, &:active
 }
 

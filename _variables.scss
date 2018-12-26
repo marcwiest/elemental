@@ -17,7 +17,7 @@ $background_color_input_hover:  #fff                     !default;
 $background_color_input_focus:  #fff                     !default;
 $border_color_input:            $color_ui                !default;
 $border_color_input_hover:      $color_ui                !default;
-$border_color_input_focus:      $color_ui                !default;
+$border_color_input_focus:      $color_accent            !default;
 $placeholder_color_input:       darken( $color_ui, 15% ) !default;
 $placeholder_color_input_hover: darken( $color_ui, 15% ) !default;
 $placeholder_color_input_focus: darken( $color_ui, 15% ) !default;
@@ -74,6 +74,20 @@ $font_size_text:  18px !default;
 $font_size_input: 18px !default;
 $font_size_code:  14px !default;
 
+@mixin heading( $size:1 ) {
+    color: $color_heading;
+    font-family: $font_family_heading;
+    line-height: $line_height_ratio_heading;
+    margin-bottom: $default_spacing;
+    @if $size == 1      { font-size: $font_size_h1; }
+    @else if $size == 2 { font-size: $font_size_h2; }
+    @else if $size == 3 { font-size: $font_size_h3; }
+    @else if $size == 4 { font-size: $font_size_h4; }
+    @else if $size == 5 { font-size: $font_size_h5; }
+    @else if $size == 6 { font-size: $font_size_h6; }
+    @else               { font-size: $size; }
+}
+
 /*
 Margin Bottom
 */
@@ -92,28 +106,26 @@ $padding_bottom_input:  8px !default;
 $border_width_input:  1px !default;
 $border_radius_input: 3px !default;
 
-$height_select: calc(
+$height_input: calc(
     #{floor($font_size_input * $line_height_ratio_input)}
     + #{$padding_top_input}
     + #{$padding_bottom_input}
     + #{$border_width_input * 2}
-);
-$height_select_firefox: calc(
+) !default;
+
+$height_input_moz: calc(
     #{ceil($font_size_input * $line_height_ratio_input)}
     + #{$padding_top_input}
     + #{$padding_bottom_input}
     + #{$border_width_input * 2}
-);
-
-/*
-Focus Styles
-*/
+) !default;
 
 @mixin focus-outline {
     &:focus {
         outline: 0;
-        box-shadow: 0 0 2px rgba( $color_accent, .75 );
         border-color: $color_accent;
+        // Serving suggestion:
+        // box-shadow: 0 0 2px rgba( $color_accent, .75 );
         @content;
     }
 }
