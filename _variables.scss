@@ -110,8 +110,8 @@ $height_input_moz: calc(
     &:focus {
         outline: 0;
         border-color: $color_accent;
+        @content;
         // Serving suggestion:
         // box-shadow: 0 0 2px rgba( $color_accent, .75 );
-        @content;
     }
 }
