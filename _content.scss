@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.small {
+    // NOTE: The small tag can be found within `_normalize.scss`.
+    @extend small;
+}
+
 p {
     margin-bottom: $default_spacing;
 }
