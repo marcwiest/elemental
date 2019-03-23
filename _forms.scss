@@ -101,7 +101,6 @@ textarea {
 select {
     cursor: pointer;
 
-
     @if variable-exists(select-background-image) {
         appearance: none;
         background-image: $select-background-image;
@@ -126,7 +125,6 @@ select {
 }
 
 button,
-.button, .btn,
 [type*="button"],
 [type*="submit"],
 [type*="reset"] {
@@ -137,6 +135,7 @@ button,
     height: $height_input;
     line-height: $height_input;
     @supports (-moz-appearance:none) {
+        // Firefox only.
         height: $height_input_moz;
         line-height: $height_input_moz;
     }
