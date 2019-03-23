@@ -74,20 +74,6 @@ $font_size_text:  18px !default;
 $font_size_input: 18px !default;
 $font_size_code:  14px !default;
 
-@mixin heading( $size:1 ) {
-    color: $color_heading;
-    font-family: $font_family_heading;
-    line-height: $line_height_ratio_heading;
-    margin-bottom: $default_spacing;
-    @if $size == 1      { font-size: $font_size_h1; }
-    @else if $size == 2 { font-size: $font_size_h2; }
-    @else if $size == 3 { font-size: $font_size_h3; }
-    @else if $size == 4 { font-size: $font_size_h4; }
-    @else if $size == 5 { font-size: $font_size_h5; }
-    @else if $size == 6 { font-size: $font_size_h6; }
-    @else               { font-size: $size; }
-}
-
 /*
 Margin Bottom
 */
