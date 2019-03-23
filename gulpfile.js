@@ -32,7 +32,7 @@ gulp.task( 'css', function() {
 * The paths must be absolute (not realtive ./) for newly added files to be recognized.
 * https://github.com/sindresorhus/gulp-ruby-sass/issues/11#issuecommentt-33660887
 */
-gulp.task( 'watch', function() {
+gulp.task( 'watch', ['css'], function() {
 
     gulp.watch( '*.scss', ['css'] );
 
