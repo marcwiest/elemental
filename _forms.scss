@@ -100,17 +100,24 @@ textarea {
 
 select {
     cursor: pointer;
-    appearance: none;
+
+
+    @if variable-exists(select-background-image) {
+        appearance: none;
+        background-image: $select-background-image;
+        background-position: calc( 100% - #{$padding_right_input} ) 50%;
+    }
+    @else {
+        appearance: menulist;
+        // Override webkit to ensure proper display when multiple or size attribute is present.
+        -webkit-appearance: menulist-button;
+    }
 
     // Remove inner border for Firefox.
     &:-moz-focusring {
         color: transparent;
         text-shadow: 0 0 0 #000;
     }
-
-    // Base64 encoded via: http://b64.io/
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8ZyBpZD0iRGVza3RvcCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iQ29udGFjdC1VcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgxNC4wMDAwMDAsIC0yMDE1LjAwMDAwMCkiIGZpbGw9IiM4MjgzODQiPiAgICAgICAgICAgIDxnIGlkPSJDb250YWN0LUZvcm0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxMzY3LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYyLjAwMDAwMCwgMTI0LjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZvcm0tQ29udGVudCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDYuMDAwMDAwLCAyNTYuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlJlY3RhbmdsZS0xMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDExLjAwMDAwMCwgMjY4LjAwMDAwMCkgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtNDExLjAwMDAwMCwgLTI2OC4wMDAwMDApICIgcG9pbnRzPSI0MDggMjY1IDQxNCAyNzEgNDA4IDI3MSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+);
-    background-position: calc( 100% - #{$padding_right_input} ) 50%;
 }
 
 [type*="file"] {
