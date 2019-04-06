@@ -55,6 +55,12 @@ cite, address {
     font-style: normal;
 }
 
+q {
+    quotes: "“" "”";
+    // NOTE: Color can be changed via:
+    // &::before, &::after { color: #de1e7e; }
+}
+
 hr {
     display: block;
     color: $color_ui;
