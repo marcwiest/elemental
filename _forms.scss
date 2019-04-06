@@ -3,11 +3,6 @@
 form,
 fieldset {
     margin-bottom: $default_spacing;
-    &::after {
-        content: '';
-        display: table;
-        clear: both;
-    }
 }
 
 label, input, select, textarea {
@@ -35,6 +30,7 @@ select {
     font-size: $font_size_input;
     height: $height_input;
     line-height: $height_input;
+    // Firefox only.
     @supports (-moz-appearance:none) {
         height: $height_input_moz;
         line-height: $height_input_moz;
@@ -116,6 +112,11 @@ select {
     &:-moz-focusring {
         color: transparent;
         text-shadow: 0 0 0 #000;
+    }
+
+    &[size], &[multiple] {
+        height: auto;
+        line-height: $line_height_ratio_input;
     }
 }
 
