@@ -23,6 +23,8 @@ label, input, select, textarea {
 [type*="text"],
 [type*="url"],
 input:not([type]),
+// TODO: Shorten the selector.
+// input:not([type*="checkbox"]):not([type*="radio"]):not([type*="button"]),
 textarea,
 select {
     width: 100%;
