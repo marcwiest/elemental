@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-.small {
-    // NOTE: The small tag can be found within `_normalize.scss`.
-    @extend small;
+small, .small {
+    font-size: 80%;
 }
 
 p {
