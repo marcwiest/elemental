@@ -8,6 +8,7 @@ html {
 body {
     min-height: 100vh;
     background-color: #fff;
+    text-rendering: optimizeLegibility;
     color: $color_text;
     font-family: $font_family_text;
     font-size: $font_size_text;
