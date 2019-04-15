@@ -44,6 +44,8 @@ a {
     cursor: pointer;
     // NOTE: States need to be applied in the following order:
     // &:hover, &:focus, &:visited, &:active
+    &:hover {
+        text-decoration: underline;
 }
 
 blockquote, address {
