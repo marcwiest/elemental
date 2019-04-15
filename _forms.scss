@@ -53,16 +53,17 @@ select {
         border-color: $border_color_input_hover;
     }
     &:focus {
+        outline: 0;
         color: $color_input_focus;
         background-color: $background_color_input_focus;
         border-color: $border_color_input_focus;
+        box-shadow: $box_shadow_input_focus;
     }
-    @include focus-outline;
 }
 
 // Ignore rtl for non rtl data.
-[type*="email"],
-[type*="url"] {
+input[type*="email"],
+input[type*="url"] {
 	direction: ltr;
 }
 
@@ -110,15 +111,15 @@ select {
         -webkit-appearance: menulist-button;
     }
 
+    &[size], &[multiple] {
+        height: auto;
+        line-height: $line_height_ratio_input;
+    }
+
     // Remove inner border for Firefox.
     &:-moz-focusring {
         color: transparent;
         text-shadow: 0 0 0 #000;
-    }
-
-    &[size], &[multiple] {
-        height: auto;
-        line-height: $line_height_ratio_input;
     }
 }
 
@@ -149,7 +150,10 @@ button,
     background-color: $color_ui;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
-    @include focus-outline;
+    &:focus {
+        outline: 0;
+        box-shadow: $box_shadow_button_focus;
+    }
 }
 
 [type*="checkbox"],
