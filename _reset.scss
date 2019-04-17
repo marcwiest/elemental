@@ -3,6 +3,7 @@
 // Elemental defaults.
 
 *, ::before, ::after {
+    // github.com/csstools/sanitize.css/pull/171
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -18,15 +19,12 @@
     text-shadow: none;
 }
 
-// Remove the gap between audio, canvas, iframes,
-// images, videos and the bottom of their containers:
-// https://github.com/h5bp/html5-boilerplate/issues/440
+// Normalize overrides.
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+img {
+    border-style: solid;
+}
+
+fieldset {
+    padding: 0;
 }
