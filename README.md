@@ -6,9 +6,3 @@ Elemental CSS is a minimalistic and opinionated base for most HTML elements and 
 
 ### Forms
 - http://wtfhtmlcss.com/
-
-### CSS Cleaners
-- https://github.com/leeoniya/dropcss/
-- https://github.com/uncss/uncss
-- https://github.com/FullHuman/purgecss
-- https://github.com/purifycss/purifycss
