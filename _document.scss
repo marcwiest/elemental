@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
+// 1. The smallest supported screen width.
+// 2. Prevent adjustments of font size after orientation changes in iOS.
+// 3. Use a 4-space tab width in all browsers.
+
 html {
-    min-width: 320px;
-    text-size-adjust: none;
+    min-width: 320px; // 1
+    text-size-adjust: none; // 2
+    tab-size: 4; // 3
 }
 
 body {
