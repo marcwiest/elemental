@@ -89,6 +89,8 @@ pre {
     display: block;
     overflow: auto;
     white-space: normal;
+    // Use "pre-line" to account for \n.
+    // white-space: pre-line;
     margin-bottom: $default_spacing;
     > code {
         display: block;
