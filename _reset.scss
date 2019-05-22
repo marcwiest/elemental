@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
-// Elemental defaults.
+// Elemental reset.
+// Generalizes browser styles.
 
 *, ::before, ::after {
     // github.com/csstools/sanitize.css/pull/171
@@ -21,6 +22,7 @@
 }
 
 // Normalize overrides.
+// Due to specificity, normalize overrides need to be applied to tags directly.
 
 img {
     border-style: solid;
