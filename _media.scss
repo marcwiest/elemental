@@ -24,7 +24,9 @@ object {
 	max-width: 100%; // 1
 }
 
-figcaption { font-size: $font_size_small; }
+figcaption {
+    font-size: $font_size_small;
+}
 
 // 1. Style alt text.
 img {
