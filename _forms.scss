@@ -9,19 +9,19 @@ label, input, select, textarea {
     display: inline-block;
 }
 
-[type*="date"],
-[type*="datetime-local"], // github.com/whatwg/html/issues/336
-[type*="month"],
-[type*="time"],
-[type*="week"],
-[type*="file"],
-[type*="email"],
-[type*="number"],
-[type*="password"],
-[type*="search"],
-[type*="tel"],
-[type*="text"],
-[type*="url"],
+[type=date],
+[type=datetime-local], // github.com/whatwg/html/issues/336
+[type=month],
+[type=time],
+[type=week],
+[type=file],
+[type=email],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=url],
 input:not([type]),
 // TODO: Shorten the selector.
 // input:not([type*="checkbox"]):not([type*="radio"]):not([type*="button"]),
