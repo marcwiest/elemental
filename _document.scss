@@ -7,6 +7,7 @@
 html {
     min-width: 320px; // 1
     text-size-adjust: none; // 2
+    text-rendering: optimizeLegibility;
     tab-size: 4; // 3
     font-size: 62.5%; // 4
 }
@@ -17,6 +18,7 @@ body {
     text-rendering: optimizeLegibility;
     color: $color_base;
     font-family: $font_family_base;
+    font-feature-settings: "kern", "liga", "clig", "calt";
     font-size: $font_size_base;
     line-height: $line_height_ratio_base;
 }
@@ -30,4 +32,9 @@ body {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+}
+
+[hidden],
+template {
+  display: none;
 }
