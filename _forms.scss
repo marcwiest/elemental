@@ -146,11 +146,10 @@ button,
     user-select: none;
     white-space: nowrap;
     cursor: pointer;
-}
-
-button::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
 }
 
 [type=checkbox],
