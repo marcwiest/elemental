@@ -148,6 +148,11 @@ button,
     cursor: pointer;
 }
 
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
 [type=checkbox],
 [type=radio] {
     display: inline-block;
