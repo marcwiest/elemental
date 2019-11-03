@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+$vertical_rhythm: 3.2rem !default;
+$font_size_h1:    4.6rem !default;
+$font_size_h2:    3.6rem !default;
+$font_size_h3:    2.8rem !default;
+$font_size_h4:    2.2rem !default;
+$font_size_h5:    1.8rem !default;
+$font_size_h6:    1.6rem !default;
+
+.wysiwyg {
+    form,
+    fieldset,
+    ul, ol, dl,
+    h1, h2, h3, h4, h5, h6,
+    p,
+    pre,
+    table {
+        margin-bottom: $vertical_rhythm;
+    }
+    blockquote, address {
+        margin-bottom: $vertical_rhythm;
+        :last-child { margin-bottom: 0; }
+    }
+    caption {
+        margin: ($vertical_rhythm / 2) 0;
+    }
+    hr {
+        margin: ($vertical_rhythm * 2) 0;
+    }
+    h1 { font-size: $font_size_h1; }
+    h2 { font-size: $font_size_h2; }
+    h3 { font-size: $font_size_h3; }
+    h4 { font-size: $font_size_h4; }
+    h5 { font-size: $font_size_h5; }
+    h6 { font-size: $font_size_h6; }
+}

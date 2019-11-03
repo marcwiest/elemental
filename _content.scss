@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
-small, .small {
+h1, h2, h3, h4, h5, h6 {
+    line-height: $line_height_ratio_heading;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+small {
     font-size: $font_size_small;
 }
 
-p {
-    margin-bottom: $default_spacing;
-}
-
 ol, ul {
+    list-style: none;
     list-style-position: inside;
-    margin-bottom: $default_spacing;
     cursor: default;
     & ol,
     & ul {
@@ -22,11 +24,10 @@ li { cursor: auto; }
 
 dl {
     list-style: none;
-    margin-bottom: $default_spacing;
 }
 dt {
     font-weight: bold;
-    color: $color_heading;
+    color: inherit;
 }
 dd {}
 
@@ -40,18 +41,8 @@ abbr, dfn {
 
 a {
     color: $color_accent;
-    text-decoration: none;
+    text-decoration: inherit;
     cursor: pointer;
-    // NOTE: States need to be applied in the following order:
-    // &:hover, &:focus, &:visited, &:active
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-blockquote, address {
-    margin-bottom: $default_spacing;
-    :last-child { margin-bottom: 0; }
 }
 
 cite, address {
@@ -67,8 +58,6 @@ q {
 hr {
     display: block;
     color: $color_ui;
-    border-bottom-width: 1px;
-    margin: ($default_spacing * 2) 0;
 }
 
 code, kbd, samp {
@@ -89,9 +78,8 @@ pre {
     display: block;
     overflow: auto;
     white-space: normal;
-    // Use "pre-line" to account for \n.
+    // NOTE: Use "pre-line" to account for \n.
     // white-space: pre-line;
-    margin-bottom: $default_spacing;
     > code {
         display: block;
         padding: 0;

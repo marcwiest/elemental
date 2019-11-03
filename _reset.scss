@@ -1,17 +1,30 @@
 @charset "UTF-8";
 
-// Elemental reset.
-// Generalizes browser styles.
-
+// 1. Apply border-box globally by default.
+// https://github.com/csstools/sanitize.css/pull/171
 *, ::before, ::after {
-    // github.com/csstools/sanitize.css/pull/171
-    box-sizing: border-box;
+    box-sizing: border-box; // 1
     margin: 0;
     padding: 0;
     border: 0;
     border-style: solid;
     border-color: $color_ui;
     background-repeat: no-repeat;
+}
+
+// 1. Ensure horizontal rules are visible by default.
+hr {
+    border-top-width: 1px; // 1
+}
+
+// 1. Normalize override. Due to specificity, normalize overrides need to be applied to tags directly.
+img {
+    border-style: solid; // 1
+}
+
+// 1. Normalize override. Due to specificity, normalize overrides need to be applied to tags directly.
+fieldset {
+    padding: 0; // 1
 }
 
 // Custom outline style for all focused elements.
@@ -29,15 +42,4 @@
     color: inherit;
     text-shadow: none;
     text-decoration: none;
-}
-
-// Normalize overrides.
-// Due to specificity, normalize overrides need to be applied to tags directly.
-
-img {
-    border-style: solid;
-}
-
-fieldset {
-    padding: 0;
 }

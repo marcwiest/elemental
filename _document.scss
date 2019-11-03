@@ -3,11 +3,12 @@
 // 1. The smallest supported screen width.
 // 2. Prevent adjustments of font size after orientation changes in iOS.
 // 3. Use a 4-space tab width in all browsers.
-
+// 4. Sets the browser default font size for easier `rem` conversion (e.g. 1.6rem = 16px).
 html {
     min-width: 320px; // 1
     text-size-adjust: none; // 2
     tab-size: 4; // 3
+    font-size: 62.5%; // 4
 }
 
 body {
@@ -20,12 +21,12 @@ body {
     line-height: $line_height_ratio_text;
 }
 
-body,
-button,
-[type="button"],
-[type="submit"],
-[type="reset"] {
-    @if $apply_font_smoothing {
+@if $apply_font_smoothing {
+    body,
+    button,
+    [type="button"],
+    [type="submit"],
+    [type="reset"] {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }

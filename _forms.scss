@@ -1,12 +1,7 @@
 @charset "UTF-8";
 
-form,
-fieldset {
-    margin-bottom: $default_spacing;
-}
-
 label, input, select, textarea {
-    display: inline-block;
+    display: block;
 }
 
 [type=date],
@@ -23,8 +18,6 @@ label, input, select, textarea {
 [type=text],
 [type=url],
 input:not([type]),
-// TODO: Shorten the selector.
-// input:not([type*="checkbox"]):not([type*="radio"]):not([type*="button"]),
 textarea,
 select {
     width: 100%;
@@ -37,10 +30,8 @@ select {
         height: $height_input_moz;
         line-height: $height_input_moz;
     }
-    padding: {
-        left: $padding_left_input;
-        right: $padding_right_input;
-    }
+    padding-left: $padding_left_input;
+    padding-right: $padding_right_input;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
     box-shadow: none;
@@ -53,17 +44,15 @@ select {
         border-color: $border_color_input_hover;
     }
     &:focus {
-        outline: 0;
         color: $color_input_focus;
         background-color: $background_color_input_focus;
         border-color: $border_color_input_focus;
-        box-shadow: $box_shadow_input_focus;
     }
 }
 
 // Ignore rtl for non rtl data.
-input[type*="email"],
-input[type*="url"] {
+input[type=email],
+input[type=url] {
 	direction: ltr;
 }
 
@@ -91,10 +80,8 @@ textarea {
     @supports (-moz-appearance:none) {
         min-height: $height_input_moz;
     }
-    padding: {
-        top: $padding_top_input;
-        bottom: $padding_bottom_input;
-    }
+    padding-top: $padding_top_input;
+    padding-bottom: $padding_bottom_input;
 }
 
 select {
@@ -129,6 +116,7 @@ select {
 }
 
 button,
+[role="button"],
 [type*="button"],
 [type*="submit"],
 [type*="reset"] {
@@ -143,21 +131,16 @@ button,
         height: $height_input_moz;
         line-height: $height_input_moz;
     }
-    padding: {
-        left: $padding_left_input;
-        right: $padding_right_input;
-    }
+    padding-left: $padding_left_input;
+    padding-right: $padding_right_input;
     background-color: $color_ui;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
-    &:focus {
-        outline: 0;
-        box-shadow: $box_shadow_button_focus;
-    }
 }
 
 [type*="checkbox"],
 [type*="radio"] {
+    display: inline-block;
     vertical-align: middle;
     cursor: pointer;
 }
