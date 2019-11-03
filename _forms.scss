@@ -1,11 +1,10 @@
 @charset "UTF-8";
 
-label, input, select, textarea {
+label{
     display: block;
-}
-
-label[for] {
-    cursor: pointer;
+    &[for] {
+        cursor: pointer;
+    }
 }
 
 [type=date],
@@ -19,12 +18,15 @@ label[for] {
 [type=password],
 [type=search],
 [type=tel],
-[type=text],
 [type=url],
+[type=text],
 input:not([type]),
 textarea,
 select {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    box-shadow: none;
     font-family: $font_family_input;
     font-size: $font_size_input;
     height: $height_input;
@@ -38,7 +40,6 @@ select {
     padding-right: $padding_right_input;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
-    box-shadow: none;
     color: $color_input;
     background-color: $background_color_input;
     border-color: $border_color_input;
@@ -121,30 +122,34 @@ select {
 }
 
 button,
-[role="button"],
-[type*="button"],
-[type*="submit"],
-[type*="reset"] {
+[role=button],
+[type=button],
+[type=submit],
+[type=reset] {
     display: inline-block;
     appearance: none;
-    cursor: pointer;
     text-align: center;
+    max-width: 100%;
     height: $height_input;
     line-height: $height_input;
+    // Firefox only.
     @supports (-moz-appearance:none) {
-        // Firefox only.
         height: $height_input_moz;
         line-height: $height_input_moz;
     }
     padding-left: $padding_left_input;
     padding-right: $padding_right_input;
-    background-color: $color_ui;
     border-width: $border_width_input;
     border-radius: $border_radius_input;
+    background-color: $color_ui;
+    border-color: $color_ui;
+    user-select: none;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-[type*="checkbox"],
-[type*="radio"] {
+[type=checkbox],
+[type=radio] {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -154,6 +159,6 @@ input:disabled,
 select:disabled,
 button:disabled,
 textarea:disabled {
-  cursor: not-allowed;
-  opacity: .5;
+    cursor: not-allowed;
+    opacity: .5;
 }
