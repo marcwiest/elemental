@@ -4,13 +4,13 @@
 Colors
 */
 
-$color_text:    #474747 !default;
+$color_base:    #474747 !default;
 $color_accent:  #2199de !default;
 $color_ui:      #e8e8e8 !default;
 
-$color_input:                   $color_text            !default;
-$color_input_hover:             $color_text            !default;
-$color_input_focus:             $color_text            !default;
+$color_input:                   $color_base            !default;
+$color_input_hover:             $color_base            !default;
+$color_input_focus:             $color_base            !default;
 $background_color_input:        #fff                   !default;
 $background_color_input_hover:  #fff                   !default;
 $background_color_input_focus:  #fff                   !default;
@@ -53,28 +53,28 @@ $mono_font_family:
     /* fallback */ monospace
     !default;
 
-$font_family_text:    $system_font_family !default;
+$font_family_base:    $system_font_family !default;
 $font_family_input:   $system_font_family !default;
 $font_family_code:      $mono_font_family !default;
 
-$line_height_ratio_heading: 1.25 !default;
-$line_height_ratio_text:    1.65 !default;
-$line_height_ratio_input:   1.65 !default;
-$line_height_ratio_code:    1.65 !default;
+$line_height_ratio_base:    1.5 !default;
+$line_height_ratio_heading: 1.5 !default;
+$line_height_ratio_input:   1.5 !default;
+$line_height_ratio_code:    1.5 !default;
 
-$font_size_text:  18px !default;
-$font_size_input: 18px !default;
-$font_size_code:  14px !default;
+$font_size_base:  1.8rem !default;
+$font_size_input: 1.8rem !default;
+$font_size_code:  1.4rem !default;
 $font_size_small: 80% !default;
 
 /*
 Forms
 */
 
-$padding_left_input:   16px !default;
-$padding_right_input:  16px !default;
-$padding_top_input:     8px !default;
-$padding_bottom_input:  8px !default;
+$padding_left_input:   1.6rem !default;
+$padding_right_input:  1.6rem !default;
+$padding_top_input:     .8rem !default;
+$padding_bottom_input:  .8rem !default;
 
 $border_width_input:  1px !default;
 $border_radius_input: 3px !default;
@@ -94,9 +94,10 @@ $height_input_moz: calc(
 ) !default;
 
 // NOTE: If commented-out a more default appearance will be applied, see `_forms.scss`.
-$select-background-image: url(
-    "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%238C98F2'><polygon points='0,0 100,0 50,50'/></svg>"
-) !default;
+// NOTE: `str-slice('' + $color_input, 2)` casts color to string and removes the hash tag.
+// $select-background-image: url(
+//     "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='%23" + str-slice('' + $color_input, 2) + "'><polygon points='0,0 100,0 50,50'/></svg>"
+// ) !default;
 
 // Base64 encoded via: http://b64.io/:
 // data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPiAgICA8ZyBpZD0iRGVza3RvcCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+ICAgICAgICA8ZyBpZD0iQ29udGFjdC1VcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTgxNC4wMDAwMDAsIC0yMDE1LjAwMDAwMCkiIGZpbGw9IiM4MjgzODQiPiAgICAgICAgICAgIDxnIGlkPSJDb250YWN0LUZvcm0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLCAxMzY3LjAwMDAwMCkiPiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzYyLjAwMDAwMCwgMTI0LjAwMDAwMCkiPiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9IkZvcm0tQ29udGVudCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDYuMDAwMDAwLCAyNTYuMDAwMDAwKSI+ICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlJlY3RhbmdsZS0xMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDExLjAwMDAwMCwgMjY4LjAwMDAwMCkgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtNDExLjAwMDAwMCwgLTI2OC4wMDAwMDApICIgcG9pbnRzPSI0MDggMjY1IDQxNCAyNzEgNDA4IDI3MSI+PC9wb2x5Z29uPiAgICAgICAgICAgICAgICAgICAgPC9nPiAgICAgICAgICAgICAgICA8L2c+ICAgICAgICAgICAgPC9nPiAgICAgICAgPC9nPiAgICA8L2c+PC9zdmc+

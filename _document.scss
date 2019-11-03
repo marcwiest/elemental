@@ -15,10 +15,10 @@ body {
     min-height: 100vh;
     background-color: #fff;
     text-rendering: optimizeLegibility;
-    color: $color_text;
-    font-family: $font_family_text;
-    font-size: $font_size_text;
-    line-height: $line_height_ratio_text;
+    color: $color_base;
+    font-family: $font_family_base;
+    font-size: $font_size_base;
+    line-height: $line_height_ratio_base;
 }
 
 @if $apply_font_smoothing {

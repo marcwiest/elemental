@@ -4,6 +4,10 @@ label, input, select, textarea {
     display: block;
 }
 
+label[for] {
+    cursor: pointer;
+}
+
 [type=date],
 [type=datetime-local], // github.com/whatwg/html/issues/336
 [type=month],
@@ -90,7 +94,8 @@ select {
     @if variable-exists(select-background-image) {
         appearance: none;
         background-image: $select-background-image;
-        background-position: calc( 100% - #{$padding_right_input} ) 50%;
+        background-position: calc(100% - #{$padding_right_input}) 50%;
+        // background-size: 20px;
     }
     @else {
         appearance: menulist;
