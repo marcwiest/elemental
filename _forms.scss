@@ -158,10 +158,3 @@ button,
     cursor: pointer;
 }
 
-input:disabled,
-select:disabled,
-button:disabled,
-textarea:disabled {
-    cursor: not-allowed;
-    opacity: .5;
-}
