@@ -1,6 +1,5 @@
 
-// 1. Apply border-box globally by default.
-// https://github.com/csstools/sanitize.css/pull/171
+// 1. Apply border-box globally by default. https://github.com/csstools/sanitize.css/pull/171
 *, ::before, ::after {
     box-sizing: border-box; // 1
     margin: 0;
@@ -12,15 +11,22 @@
 }
 
 // 1. Ensure horizontal rules are visible by default.
+// 2. Normalize override.
 hr {
     border-top-width: 1px; // 1
+    margin: 0; // 2
 }
 
 // Normalize overrides.
-// Due to specificity, normalize overrides need to be applied to tags directly.
-h1 { margin: 0; }
 img { border-style: solid; }
 fieldset { padding: 0; }
+
+::selection {
+    background-color: rgba(255, 244, 147, .8);
+    color: inherit;
+    text-shadow: none;
+    text-decoration: none;
+}
 
 // Custom outline style for all focused elements.
 // NOTE: To remove outline for mouse users, read https://a11yproject.com/posts/never-remove-css-outlines/.
@@ -31,10 +37,3 @@ fieldset { padding: 0; }
 //     outline-style: solid;
 //     outline-color: #3597ec;
 // }
-
-::selection {
-    background-color: rgba( 255, 244, 147, .8 );
-    color: inherit;
-    text-shadow: none;
-    text-decoration: none;
-}
