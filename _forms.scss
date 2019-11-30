@@ -88,30 +88,19 @@ textarea {
     padding-bottom: $padding_bottom_input;
 }
 
+// 1. Override webkit to ensure proper display when multiple or size attribute is present.
+// 2. Remove inner border for Firefox.
 select {
     cursor: pointer;
-
-    @if variable-exists(select-background-image) {
-        appearance: none;
-        background-image: $select-background-image;
-        background-position: calc(100% - #{$padding_right_input}) 50%;
-        // background-size: 20px;
-    }
-    @else {
-        appearance: menulist;
-        // Override webkit to ensure proper display when multiple or size attribute is present.
-        -webkit-appearance: menulist-button;
-    }
-
+    appearance: menulist;
+    -webkit-appearance: menulist-button; // 1
     &[size], &[multiple] {
         height: auto;
         line-height: $line_height_ratio_input;
     }
-
-    // Remove inner border for Firefox.
     &:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 #000;
+        color: transparent; // 2
+        text-shadow: 0 0 0 #000; // 2
     }
 }
 
@@ -135,4 +124,3 @@ button,
     vertical-align: middle;
     cursor: pointer;
 }
-
