@@ -1,23 +1,27 @@
 
+// 1. Sets the browser default font size for easier `rem` conversion (e.g. 1.6rem = 16px).
+//    It's set via :root to ensure it's not overwritten by acciedent via an html tag since :root has a higher specificity.
+//    https://developer.mozilla.org/en-US/docs/Web/CSS/:root
+:root {
+    font-size: 62.5%; // 1
+}
+
 // 1. The smallest supported screen width.
 // 2. Prevent adjustments of font size after orientation changes in iOS.
 // 3. Use a 4-space tab width in all browsers.
-// 4. Sets the browser default font size for easier `rem` conversion (e.g. 1.6rem = 16px).
 html {
     min-width: 320px; // 1
     text-size-adjust: none; // 2
-    text-rendering: optimizeLegibility;
     tab-size: 4; // 3
-    font-size: 62.5%; // 4
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
 body {
     min-height: 100vh;
     background-color: #fff;
-    text-rendering: optimizeLegibility;
     color: $color_base;
     font-family: $font_family_base;
-    font-feature-settings: "kern", "liga", "clig", "calt";
     font-size: $font_size_base;
     line-height: $line_height_ratio_base;
 }
