@@ -1,0 +1,27 @@
+
+@mixin button {
+    display: inline-block;
+    appearance: none;
+    text-align: center;
+    max-width: 100%;
+    height: $height_input;
+    line-height: $height_input;
+    // Firefox only.
+    @supports (-moz-appearance:none) {
+        height: $height_input_moz;
+        line-height: $height_input_moz;
+    }
+    padding-left: $padding_left_input;
+    padding-right: $padding_right_input;
+    border-width: $border_width_input;
+    border-radius: $border_radius_input;
+    background-color: $color_ui;
+    border-color: $color_ui;
+    user-select: none;
+    white-space: nowrap;
+    cursor: pointer;
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+}
